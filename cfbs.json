@@ -1,0 +1,17 @@
+{
+  "name": "custom-policy-update",
+  "description": "Customize the CFEngine Masterfiles Policy Framework Update Policy.",
+  "type": "module-repo",
+  "provides": {
+    "custom-policy-update": {
+      "description": "Customize the CFEngine Masterfiles Policy Framework Update Policy.",
+      "tags": ["example"],
+      "repo": "https://github.com/nickanderson/https://github.com/nickanderson/example-cfengine-mpf-custom-policy-update",
+      "by": "https://github.com/nickanderson/",
+      "steps": [
+        "copy policy/custom-policy-update.cf services/custom-update-policy/custom-update-policy.cf",
+        "json cfbs/def.json def.json"
+      ]
+    }
+  }
+}

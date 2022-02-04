@@ -1,0 +1,43 @@
+body file control
+{
+        namespace => "my_organization";
+}
+
+bundle agent custom_policy_update
+{
+  vars:
+      # The bundle that the MPF runs by default:
+      # https://github.com/cfengine/masterfiles/search?q=%22bundle+agent+cfe_internal_update_policy_cpv%22
+      "mpf_default_policy_update_bundle"
+        string => "default:cfe_internal_update_policy_cpv";
+
+  methods:
+
+      # We want to do some things before the stock policy update runs
+      "pre_default_policy_update"
+        action => default:u_immediate;
+
+      # We want to use the stock policy update (or, maybe we don't ...)
+      "$(mpf_default_policy_update_bundle)"
+        action => default:u_immediate;
+
+      # We want to do some things before the stock policy update runs
+      "post_default_policy_update"
+        action => default:u_immediate;
+
+}
+
+bundle agent pre_default_policy_update
+{
+  reports:
+    default:verbose_mode|my_orginization:DEBUG_custom_policy_update::
+      "Running $(this.namespace):$(this.bundle) ..."
+        action => default:u_immediate;
+}
+bundle agent post_default_policy_update
+{
+  reports:
+    default:verbose_mode|my_orginization:DEBUG_custom_policy_update::
+      "Running $(this.namespace):$(this.bundle) ..."
+        action => default:u_immediate;
+}

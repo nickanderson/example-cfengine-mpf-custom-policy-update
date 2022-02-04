@@ -1,0 +1,6 @@
+{
+  "vars": {
+    "update_inputs": ["services/custom-update-policy/custom-update-policy.cf"],
+    "mpf_update_policy_bundle": "my_organization:custom_policy_update"
+  }
+}
