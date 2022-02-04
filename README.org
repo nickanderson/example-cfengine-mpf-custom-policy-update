@@ -1,4 +1,4 @@
-This repository hosts an example cfbs module to customize the MPF (CFEngine Masterfiles Policy Framework) update policy.
+This repository hosts an example cfbs module to customize the MPF (CFEngine [[https://github.com/cfengine/masterfiles][Masterfiles Policy Framework]]) update policy.
 
 * Key notes about the update policy:
 
