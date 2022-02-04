@@ -1,0 +1,24 @@
+This repository hosts an example cfbs module to customize the MPF (CFEngine Masterfiles Policy Framework) update policy.
+
+* Key notes about the update policy:
+
+- =update.cf= is the policy entry for the update policy in the MPF. By default it does not include the standard library, so custom policy files need to re-define what they need or include the standard library as part of the update policy inputs.
+- =default:def.update_inputs= is a variable used by the MPF to define additional policy files (relative to the policy entry) that should be included in inputs.[fn:1]
+- =default:def.control_common_update_bundlesequence_end= is a variable used to define bundles that should be appended to the /end/ of the update policy bundlesequence.[fn:2]
+- =default:def.mpf_update_policy_bundle= is a variable used by the MPF to define the bundle that should be used when performing a policy update.[fn:3] 
+
+* Configuration
+
+There are currently no exposed tunables (variables you could set via augments[fn:4] to influence the behavior of the policy in the module.
+
+* Footnotes
+
+[fn:1] CFEngine Documentation Reference - Masterfiles Policy Framework: [[https://docs.cfengine.com/docs/3.18/reference-masterfiles-policy-framework.html#append-to-inputs-used-by-update-policy][Append to inputs used by update policy]]. 
+
+[fn:2] CFEngine Documentation Reference - Masterfiles Policy Framework: [[https://docs.cfengine.com/docs/3.18/reference-masterfiles-policy-framework.html#append-to-inputs-used-by-update-policy][Append to the update bundlesequence]].
+
+[fn:3] CFEngine Documentation Reference - Masterfiles Policy Framework: [[https://docs.cfengine.com/docs/3.18/reference-masterfiles-policy-framework.html#specify-the-agent-bundle-used-for-policy-update][Specify the agent bundle used for policy update]].
+
+[fn:4] CFEngine Documentation Reference - Language Concepts: [[https://docs.cfengine.com/docs/3.18/reference-language-concepts-augments.html][Augments]].
+
+
