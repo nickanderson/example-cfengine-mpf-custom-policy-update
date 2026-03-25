@@ -21,7 +21,7 @@ bundle agent custom_policy_update
       "$(mpf_default_policy_update_bundle)"
         action => default:u_immediate;
 
-      # We want to do some things before the stock policy update runs
+      # We want to do some things after the stock policy update runs
       "post_default_policy_update"
         action => default:u_immediate;
 
